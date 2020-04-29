@@ -1,0 +1,334 @@
+sylius_fixtures:
+    suites:
+        bootsnbrooms:
+            listeners:
+                orm_purger: ~
+            fixtures:
+                locale:
+                    options:
+                        locales:
+                            - 'fr_CH'
+
+                currency:
+                    options:
+                        currencies:
+                            - 'CHF'
+
+                geographical:
+                    options:
+                        countries:
+                            - 'CH'
+                        zones:
+                            CH:
+                                name: 'Suisse'
+                                countries:
+                                    - 'CH'
+
+                taxon:
+                    options:
+                        custom:
+                            category:
+                                code: 'CATEGORIE'
+                                translations:
+                                    fr_CH:
+                                        name: 'Catégorie'
+                                        slug: 'categorie'
+                                children:
+                                    -   code: 'AVENTURE'
+                                        translations:
+                                            fr_CH:
+                                                name: 'Aventure'
+                                                slug: 'aventure'
+                                        children:
+                                            -   code: 'NOURRITURE_BOISSONS'
+                                                translations:
+                                                    fr_CH:
+                                                        name: 'Nourriture & Boissons'
+                                                        slug: 'nourriture-boissons'
+                                            -   code: 'VETEMENTS'
+                                                translations:
+                                                    fr_CH:
+                                                        name: 'Vêtements'
+                                                        slug: 'vetements'
+                                            -   code: 'MATERIEL_AVENTURE'
+                                                translations:
+                                                    fr_CH:
+                                                        name: 'Matériel'
+                                                        slug: 'materiel'
+                                    -   code: 'COMBAT'
+                                        translations:
+                                            fr_CH:
+                                                name: 'Combat'
+                                                slug: 'combat'
+                                        children:
+                                            -   code: 'ARMURE'
+                                                translations:
+                                                    fr_CH:
+                                                        name: 'Armure'
+                                                        slug: 'combat/armure'
+                                            -   code: 'ARMES'
+                                                translations:
+                                                    fr_CH:
+                                                        name: 'Armes'
+                                                        slug: 'combat/armes'
+                                    -   code: 'MAGIE'
+                                        translations:
+                                            fr_CH:
+                                                name: 'Magie'
+                                                slug: 'magie'
+                                        children:
+                                            -   code: 'RELIQUES'
+                                                translations:
+                                                    fr_CH:
+                                                        name: 'Reliques'
+                                                        slug: 'magie/reliques'
+                                            -   code: 'POTIONS'
+                                                translations:
+                                                    fr_CH:
+                                                        name: 'Potions'
+                                                        slug: 'magie/potions'
+                                            -   code: 'MATERIEL_MAGIQUE'
+                                                translations:
+                                                    fr_CH:
+                                                        name: 'Matériel'
+                                                        slug: 'magie/materiel'
+                                            -   code: 'LIVRES'
+                                                translations:
+                                                    fr_CH:
+                                                        name: 'Livres'
+                                                        slug: 'magie/livres'
+                                            -   code: 'FAMILIERS'
+                                                translations:
+                                                    fr_CH:
+                                                        name: 'Familiers'
+                                                        slug: 'magie/familiers'
+
+                channel:
+                    options:
+                        custom:
+                            bootsnbrooms:
+                                account_verification_required: false
+                                base_currency: 'CHF'
+                                code: 'BOOTS_N_BROOMS'
+                                color: '#fff44c'
+                                contact_email: 'irinadespot@gmail.com'
+                                currencies:
+                                    - 'CHF'
+                                default_locale: 'fr_CH'
+                                # default_tax_zone: ''
+                                enabled: true
+                                hostname: 'localhost:8000'
+                                locales:
+                                    - '%locale%'
+                                name: 'Boots & Brooms'
+                                shop_billing_data:
+                                    company: 'Boots & Brooms'
+                                    tax_id: '0001112222'
+                                    country_code: 'CH'
+                                    street: 'Rue des Prés-du-Moulin 3'
+                                    city: 'Martigny'
+                                    postcode: '1920'
+                                # skipping_payment_step_allowed: false
+                                # skipping_shipping_step_allowed: false
+                                # tax_calculation_strategy: ''
+                                # theme_name: ''         
+
+                product:
+                    options:
+                        custom:
+                            -   name: 'Clous'
+                                code: 'CLOUS'
+                                slug: 'clous'
+                                description: 'Un paquet de 100 clous de 2 cm de long, adaptés aux travaux manuels de toutes sortes.'
+                                short_description: 'Un paquet de 100 clous'
+                                main_taxon: 'NOURRITURE_BOISSONS'
+                                taxons:
+                                    - 'NOURRITURE_BOISSONS'
+                                #product_attributes: ''
+                                #product_options: ''
+                                #images: ''
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                                enabled: true
+                                #shipping_required: ''
+                                tax_category: 'NORMAL'
+                                #tracked: ''
+                            -   name: 'Griffe de dragon'
+                                code: 'GRIFFE_DRAGON'
+                                slug: 'griffe-de-dragon'
+                                description: 'La griffe de dragon est un champignon rare utilisé pour guérir certaines maladies liées aux organes internes.'
+                                short_description: 'Champignons aux propriétés médicinales'
+                                main_taxon: 'NOURRITURE_BOISSONS'
+                                taxons:
+                                    - "AVENTURE"
+                                    - 'NOURRITURE_BOISSONS'
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                                enabled: true
+                                tax_category: 'REDUIT'
+                            -   name: 'Couteau de poche'
+                                code: 'COUTEAU_POCHE'
+                                slug: 'couteau-de-poche'
+                                description: 'Un petit couteau de poche, utile pour couper les légumes, tailler des branches ou fouiller les entrailles de ses ennemis.'
+                                short_description: 'Petit couteau de poche à usages multiples'
+                                main_taxon: 'ARMES'
+                                taxons:
+                                    - 'COMBAT'
+                                    - 'ARMES'
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                                enabled: true
+                                tax_category: 'NORMAL'
+                            -   name: 'Palandro'
+                                code: 'PALANDRO'
+                                slug: 'palandro'
+                                description: 'Le palandro est un fruit délicieux de la vallée des Ombres. Il est également connu pour ses qualités régénératives sur les cornes de yacks abîmées.'
+                                short_description: 'Délicieux fruit de la vallée des Ombres'
+                                main_taxon: 'NOURRITURE_BOISSONS'
+                                taxons:
+                                    - "AVENTURE"
+                                    - 'NOURRITURE_BOISSONS'
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                                enabled: true
+                                tax_category: 'REDUIT'
+                            -   name: 'Couverture'
+                                code: 'COUVERTURE'
+                                slug: 'couverture'
+                                description: 'Une simple couverture pour se protéger du froid ou couvrir des provisions.'
+                                short_description: 'Une simple couverture multi-usages'
+                                main_taxon: 'MATERIEL_AVENTURE'
+                                taxons:
+                                    - 'AVENTURE'
+                                    - 'MATERIEL_AVENTURE'
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                                enabled: true
+                                tax_category: 'NORMAL'
+                            -   name: 'Lanterne'
+                                code: 'LANTERNE'
+                                slug: 'lanterne'
+                                description: 'Cette lanterne fonctionne à lhuile de noix de Kantado, qui dure bien plus longtemps que nimporte quel combustible connu.'
+                                short_description: 'Une lanterne qui brûle à lhuile de noix de Kantado'
+                                main_taxon: 'MATERIEL_AVENTURE'
+                                taxons:
+                                    - 'AVENTURE'
+                                    - 'MATERIEL_AVENTURE'
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                                enabled: true
+                                tax_category: 'NORMAL'
+                            -   name: 'Coffre'
+                                code: 'COFFRE'
+                                slug: 'coffre'
+                                description: 'Un coffre en bois avec une armature en bronze. Dimensions: 80 x 60 x 40.'
+                                short_description: 'Un coffre en bois et en bronze'
+                                main_taxon: 'MATERIEL_AVENTURE'
+                                taxons:
+                                    - 'AVENTURE'
+                                    - 'MATERIEL_AVENTURE'
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                                enabled: true
+                                tax_category: 'NORMAL'
+                            -   name: 'Tricorne'
+                                code: 'TRICORNE'
+                                slug: 'tricorne'
+                                description: 'Un tricorne traditionnel de pirate en laine brodé de soie de vouivre.'
+                                short_description: 'Tricorne de pirate en laine'
+                                main_taxon: 'VETEMENTS'
+                                taxons:
+                                    - 'AVENTURE'
+                                    - 'VETEMENTS'
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                                enabled: true
+                                tax_category: 'NORMAL'
+                            -   name: 'Bottes de voyage'
+                                code: 'BOTTES_VOYAGE'
+                                slug: 'bottes-de-voyage'
+                                description: 'Des bottes de voyage en cuir de yack parfaitement adaptées à de longues heures de marche.'
+                                short_description: 'Bottes de voyage en cuir de yack'
+                                main_taxon: 'VETEMENTS'
+                                taxons:
+                                    - 'AVENTURE'
+                                    - 'VETEMENTS'
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                                enabled: true
+                                tax_category: 'NORMAL'
+
+                payment_method:
+                    options:
+                        custom:
+                            cash_on_delivery:
+                                code: 'cash_on_delivery'
+                                name: 'Cash on delivery'
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                            bank_transfer:
+                                code: 'bank_transfer'
+                                name: 'Bank transfer'
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                                enabled: true
+
+                shipping_method:
+                    options:
+                        custom:
+                            ups:
+                                code: 'ups'
+                                name: 'UPS'
+                                enabled: true
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                            dhl_express:
+                                code: 'dhl_express'
+                                name: 'DHL Express'
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+                            fedex:
+                                code: 'fedex'
+                                name: 'FedEx'
+                                channels:
+                                    - 'BOOTS_N_BROOMS'
+
+                admin_user:
+                    name: 'admin_user'
+                    options:
+                        custom:
+                            -   email: 'irinadespot@gmail.com'
+                                username: 'irinadespot@gmail.com'
+                                password: 'password'
+                                enabled: true
+                                locale_code: '%locale%'
+                                first_name: 'Irina'
+                                last_name: 'Despot'
+                                avatar: '@SyliusCoreBundle/Resources/fixtures/adminAvatars/john.jpg'
+
+                tax_category:
+                    options:
+                        custom:
+                            normal:
+                                code: 'normal'
+                                name: 'Taux normal'
+                            reduit:
+                                code: 'reduit'
+                                name: 'Taux réduit'
+
+                tax_rate:
+                    options:
+                        custom:
+                            normal:
+                                code: 'normal'
+                                name: 'Taux normal suisse'
+                                zone: 'CH'
+                                category: 'normal'
+                                amount: 7.7
+
+                            reduit:
+                                code: 'reduit'
+                                name: 'Taux réduit suisse'
+                                zone: 'CH'
+                                category: 'reduit'
+                                amount: 2.5
