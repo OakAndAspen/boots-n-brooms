@@ -2,16 +2,10 @@
     "keywords": ["symfony", "sylius", "distribution", "ecommerce", "cart", "shopping"],
     "type": "project",
     "license": "proprietary",
-    "homepage": "https://sylius.com",
+    "homepage": "https://bootsnbrooms.oakandaspen.ch",
     "authors": [
         {
-            "name": "Paweł Jędrzejewski"
-        },
-        {
-            "name": "Sylius project"
-        },
-        {
-            "name": "Community contributions"
+            "name": "Irina Despot"
         }
     ],
     "require": {

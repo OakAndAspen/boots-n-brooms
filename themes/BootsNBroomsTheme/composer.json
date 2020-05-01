@@ -1,0 +1,14 @@
+{
+    "name": "oakandaspen/boots-n-brooms-theme",
+    "authors": [
+        {
+            "name": "Irina Despot",
+            "email": "irinadespot@gmail.com"
+        }
+    ],
+    "extra": {
+        "sylius-theme": {
+            "title": "Boots&Brooms Theme"
+        }
+    }
+}

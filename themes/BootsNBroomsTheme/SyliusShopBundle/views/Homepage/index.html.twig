@@ -1,0 +1,13 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+    <div id="page_homepage">
+        <div class="text-center my-4 py-4">
+            <h1>Tout pour l'aventurier en maraude!</h1>
+            <p>Chez Boots&Brooms vous pouvez trouver tout ce donc vous avez besoin pour partir à l'aventure.</p>
+        </div>
+        <hr/>
+        {{ render(url('sylius_shop_partial_channel_menu_taxon_index', {'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
+        <h2>{{ 'sylius.homepage.about_us'|trans }}</h2>
+    </div>
+{% endblock %}

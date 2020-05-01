@@ -1,0 +1,43 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius:
+    email:
+        contact_request:
+            content: 'Contenu'
+            message_from: 'Message de'
+            subject: 'Demande de contact'
+        order_confirmation:
+            has_been_successfully_placed: 'a bien été enregistrée.'
+            subject: 'Order confirmation'
+            view_order_or_change_payment_method: 'Visionnez votre commande ou changez de méthode de paiement.'
+            thank_you: 'Merci dacheter chez nous!'
+            your_order_number: 'Votre commande n°'
+        password_reset:
+            hello: 'Hello'
+            reset_your_password: 'Réinitialiser votre mot de passe'
+            subject: 'Réinitialisation du mot de passe'
+            to_reset_your_password: 'Pour changer votre mot de passe, cliquez sur le lien ci-dessous'
+        user_registration:
+            start_shopping: 'Start shopping'
+            subject: 'User registration'
+            welcome_to_our_store: 'Bienvenue dans notre magasin!'
+            you_have_just_been_registered: 'You have just been registered. Thank you'
+        verification_token:
+            hello: 'Hello'
+            subject: 'Email address verification'
+            to_verify_your_email_address: 'To verify your email address - click the link below'
+            verify_your_email_address: 'Verify your email address'
+    homepage:
+        about_us: 'Helllloooooooooooo my friends'
+    lightbox:
+        image_album_label: 'Image %1 of %2'
+    menu:
+        shop:
+            account:
+                address_book: 'Address book'
+                change_password: 'Change password'
+                dashboard: 'Dashboard'
+                header: 'Your account'
+                order_history: 'Order history'
+                personal_information: 'Personal information'

@@ -131,7 +131,7 @@ sylius_fixtures:
                                 # skipping_payment_step_allowed: false
                                 # skipping_shipping_step_allowed: false
                                 # tax_calculation_strategy: ''
-                                # theme_name: ''         
+                                theme_name: 'oakandaspen/boots-n-brooms-theme'         
 
                 product:
                     options:
