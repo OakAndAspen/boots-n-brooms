@@ -9,17 +9,15 @@
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"/>
-
     {% block metatags %}
     {% endblock %}
 
     {% block stylesheets %}
         {{ sylius_template_event('sylius.shop.layout.stylesheets') }}
+        {# --- FONTS --- #}
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+              rel="stylesheet"/>
+        {# --- CUSTOM CSS --- #}
         <link rel="stylesheet" href="{{ asset('bundles/syliusshop/css/style.css') }}"/>
     {% endblock %}
 
@@ -29,20 +27,20 @@
 <body>
 {{ sylius_template_event('sylius.shop.layout.before_body') }}
 
-{{ include('bnb_header.html.twig') }}
+{{ include('@SyliusShop/Custom/header.html.twig') }}
 
 {% include '@SyliusShop/_flashes.html.twig' %}
 
 {{ sylius_template_event('sylius.shop.layout.before_content') }}
 
 <div class="container">
-{% block content %}
-{% endblock %}
+    {% block content %}
+    {% endblock %}
 </div>
 
 {{ sylius_template_event('sylius.shop.layout.after_content') }}
 
-{% include 'bnb_footer.html.twig' %}
+{% include '@SyliusShop/Custom/footer.html.twig' %}
 
 {% block javascripts %}
     {{ sylius_template_event('sylius.shop.layout.javascripts') }}

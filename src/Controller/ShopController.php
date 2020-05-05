@@ -20,12 +20,12 @@ final class ShopController
 
     public function shop(Request $request): Response
     {
-        return $this->templatingEngine->renderResponse('@SyliusShop/ShopPage/index.html.twig');
+        return $this->templatingEngine->renderResponse('@SyliusShop/Pages/ShopPage/index.html.twig');
     }
 
     public function about(Request $request): Response
     {
-        return $this->templatingEngine->renderResponse('@SyliusShop/AboutPage/index.html.twig');
+        return $this->templatingEngine->renderResponse('@SyliusShop/Pages/AboutPage/index.html.twig');
     }
 }
 
