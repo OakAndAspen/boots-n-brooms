@@ -4,7 +4,7 @@
         <div class="container py-4">
 
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ path('sylius_shop_homepage') }}">
                     <img src="{{ asset('bundles/syliusshop/images/logo-200.png') }}"
                          alt="Boots & Brooms"
                          class="image-fluid">
@@ -22,13 +22,13 @@
 
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Shop</a>
+                            <a class="nav-link" href="{{ path('bootsnbrooms_shop') }}">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">À propos</a>
+                            <a class="nav-link" href="{{ path('bootsnbrooms_about') }}">À propos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="{{ path('sylius_shop_contact_request') }}">Contact</a>
                         </li>
                     </ul>
                     <div>

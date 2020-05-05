@@ -1,0 +1,10 @@
+bootsnbrooms_shop:
+    path: /{_locale}/shop
+    methods: [GET]
+    controller: App\Controller\ShopController::shop
+    
+bootsnbrooms_about:
+    path: /{_locale}/a-propos
+    methods: [GET]
+    controller: App\Controller\ShopController::about
+

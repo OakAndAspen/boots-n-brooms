@@ -1,0 +1,9 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+    <div id="page_shop">
+        <h1>Shop</h1>
+        <p>Coucou les gens</p>
+        {{ render(url('sylius_shop_partial_channel_menu_taxon_index', {'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
+    </div>
+{% endblock %}
