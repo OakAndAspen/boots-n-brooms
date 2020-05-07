@@ -14,11 +14,6 @@
 
     {% block stylesheets %}
         {{ sylius_template_event('sylius.shop.layout.stylesheets') }}
-        {# --- FONTS --- #}
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
-              rel="stylesheet"/>
-        {# --- CUSTOM CSS --- #}
-        <link rel="stylesheet" href="{{ asset('bundles/syliusshop/css/style.css') }}"/>
     {% endblock %}
 
     {{ sylius_template_event('sylius.shop.layout.head') }}

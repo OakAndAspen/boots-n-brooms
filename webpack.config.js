@@ -10,6 +10,10 @@ Encore
   .setOutputPath('public/build/shop/')
   .setPublicPath('/build/shop')
   .addEntry('shop-entry', './assets/shop/entry.js')
+  .copyFiles({
+    from: 'themes/BootsNBroomsTheme/SyliusShopBundle/public/images',
+    to: './img/[path][name].[ext]',
+  })
   .disableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
   .enableSourceMaps(!Encore.isProduction())
@@ -41,7 +45,7 @@ const adminConfig = Encore.getWebpackConfig();
 adminConfig.resolve.alias['sylius/ui'] = uiBundleScripts;
 adminConfig.resolve.alias['sylius/ui-resources'] = uiBundleResources;
 adminConfig.resolve.alias['sylius/bundle'] = syliusBundles;
-adminConfig.externals = Object.assign({}, adminConfig.externals, { window: 'window', document: 'document' });
+adminConfig.externals = Object.assign({}, adminConfig.externals, {window: 'window', document: 'document'});
 adminConfig.name = 'admin';
 
 module.exports = [shopConfig, adminConfig];
