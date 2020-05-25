@@ -14,6 +14,10 @@ body {
     background-color: rgba(255,255,255,0.8);
 }
 
-#NavBar img {
-    max-height: 50px;
+#NavBar .item, #NavBar .item:hover {
+    background-color: unset;
+}
+
+#Footer {
+    background-color: #444444;
 }

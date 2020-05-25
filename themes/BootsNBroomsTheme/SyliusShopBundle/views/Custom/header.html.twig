@@ -1,43 +1,50 @@
 <div class="Header" style="background-image: url('{{ asset('build/shop/img/header.jpg') }}')">
 
     <div id="NavBar">
-        <div class="container py-4">
-
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="{{ path('sylius_shop_homepage') }}">
+        <div class="ui container">
+            <div class="ui secondary menu">
+                <a class="item" href="{{ path('sylius_shop_homepage') }}">
                     <img src="{{ asset('build/shop/img/logo-200.png') }}"
-                         alt="Boots & Brooms"
-                         class="image-fluid">
+                         alt="Boots & Brooms Logo">
                     <img src="{{ asset('build/shop/img/brand-200.png') }}"
-                         alt="Boots & Brooms"
-                         class="image-fluid">
+                         alt="Boots & Brooms Brand">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ path('bootsnbrooms_shop') }}">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('bootsnbrooms_about') }}">À propos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('sylius_shop_contact_request') }}">Contact</a>
-                        </li>
-                    </ul>
-                    <div>
+                <a class="active item" href="{{ path('bootsnbrooms_shop') }}">
+                    Shop
+                </a>
+                <a class="item" href="{{ path('bootsnbrooms_about') }}">
+                    À propos
+                </a>
+                <a class="item" href="{{ path('sylius_shop_contact_request') }}">
+                    Contact
+                </a>
+                <div class="right menu">
+                    <div class="item">
                         {{ render(url('sylius_shop_partial_cart_summary', {'template': '@SyliusShop/Cart/_widget.html.twig'})) }}
                     </div>
+                    <a class="item">
+                        {{ render(controller('sylius.controller.shop.currency_switch:renderAction')) }}
+                    </a>
+                    <a class="item">
+                        {{ render(controller('sylius.controller.shop.locale_switch:renderAction')) }}
+                    </a>
+                    {% if is_granted('ROLE_USER') %}
+                        <div class="item" {{ sylius_test_html_attribute('full-name') }}>
+                            {{ 'sylius.ui.hello'|trans }} {{ app.user.customer.fullName }}!
+                        </div>
+                        <a href="{{ path('sylius_shop_account_dashboard') }}" class="item">
+                            {{ 'sylius.ui.my_account'|trans }}
+                        </a>
+                        <a href="{{ path('sylius_shop_logout') }}"
+                           class="item sylius-logout-button" {{ sylius_test_html_attribute('logout-button') }}>
+                            {{ 'sylius.ui.logout'|trans }}
+                        </a>
+                    {% else %}
+                        <a href="{{ path('sylius_shop_login') }}" class="item">{{ 'sylius.ui.login'|trans }}</a>
+                        <a href="{{ path('sylius_shop_register') }}" class="item">{{ 'sylius.ui.register'|trans }}</a>
+                    {% endif %}
                 </div>
-            </nav>
-
+            </div>
         </div>
     </div>
-
 </div>
